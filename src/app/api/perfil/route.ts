@@ -12,7 +12,7 @@ const perfilSchema = z.object({
   rg: z.string().optional().nullable().or(z.literal("")),
   telefone: z.string().optional().nullable().or(z.literal("")),
   dataNascimento: z.string().optional().nullable().or(z.literal("")),
-  sexo: z.enum(["MASCULINO", "FEMININO"]).optional().or(z.literal("")),
+  sexo: z.union([z.enum(["MASCULINO", "FEMININO"]), z.literal("")]).optional(),
 })
 
 export async function POST(request: Request) {
