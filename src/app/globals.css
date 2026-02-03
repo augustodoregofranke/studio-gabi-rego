@@ -181,6 +181,30 @@
   }
 }
 
+/* Scoped date input sizing fix for completar-perfil */
+@layer base {
+  .completar-perfil-page input[type="date"] {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    max-inline-size: 100%;
+    box-sizing: border-box;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .completar-perfil-page input[type="date"]::-webkit-date-and-time-value {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .completar-perfil-page input[type="date"]::-webkit-datetime-edit,
+  .completar-perfil-page input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+    min-width: 0;
+  }
+}
+
 /* Custom scrollbar for consistency */
 @layer base {
   ::-webkit-scrollbar {

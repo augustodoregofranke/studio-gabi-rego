@@ -202,7 +202,7 @@ function CompletarPerfilContent() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-background">
+    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-background completar-perfil-page">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-1/3 -right-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-orange-500/30 to-orange-600/10 blur-3xl animate-pulse" />
@@ -326,7 +326,7 @@ function CompletarPerfilContent() {
             </div>
 
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              <div className="space-y-1.5">
+              <div className="space-y-1.5 min-w-0 overflow-hidden completar-perfil-date-field">
                 <Label htmlFor="dataNascimento" className="text-sm font-medium flex items-center gap-1.5">
                   <span className="w-1 h-1 rounded-full bg-muted-foreground" />
                   Data de nascimento
@@ -336,11 +336,11 @@ function CompletarPerfilContent() {
                   name="dataNascimento"
                   type="date"
                   disabled={isLoading}
-                  className="h-12 border-orange-500/20 focus:border-orange-500 focus:ring-orange-500/20 bg-background/50 max-w-full"
+                  className="h-12 w-full min-w-0 max-w-full overflow-hidden border-orange-500/20 focus:border-orange-500 focus:ring-orange-500/20 bg-background/50 completar-perfil-date-input"
                 />
               </div>
 
-              <div className="space-y-1.5">
+              <div className="space-y-1.5 min-w-0">
                 <Label htmlFor="sexo" className="text-sm font-medium flex items-center gap-1.5">
                   <span className="w-1 h-1 rounded-full bg-muted-foreground" />
                   Sexo
