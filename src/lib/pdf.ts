@@ -18,7 +18,7 @@ const PAGE_BORDER_LINE_WIDTH = 0.5
 const USABLE_WIDTH = PAGE_WIDTH - MARGIN_LEFT - MARGIN_RIGHT
 
 // Table dimensions (smaller and centered)
-const TABLE_WIDTH_RATIO = 0.8 // Table takes 80% of usable width
+const TABLE_WIDTH_RATIO = 0.95 // Table takes 95% of usable width
 const TABLE_MARGIN = (USABLE_WIDTH - USABLE_WIDTH * TABLE_WIDTH_RATIO) / 2
 const TABLE_LEFT = MARGIN_LEFT + TABLE_MARGIN
 const TABLE_WIDTH = USABLE_WIDTH * TABLE_WIDTH_RATIO
