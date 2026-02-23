@@ -72,7 +72,11 @@ Plans:
   1. The Pagamento, Membro, and Agendamento tables have explicit composite indexes visible in the Supabase dashboard (Pagamento.status+dataVencimento, Membro.status, Agendamento.data)
   2. The processarAniversarios scheduler function issues a $queryRaw with EXTRACT(MONTH) and EXTRACT(DAY) — it does not fetch all active members and filter in JavaScript
   3. All 226 existing tests continue to pass after the Prisma migration is applied
-**Plans**: TBD
+**Plans**: 3 plans
+Plans:
+- [ ] 04-01-PLAN.md — Add required Prisma indexes and generate scoped migration SQL for PERF-01 with off-hours deploy guidance.
+- [ ] 04-02-PLAN.md — Rewrite `processarAniversarios` to use parameterized `$queryRaw` with `EXTRACT(MONTH/DAY)` and preserve notification behavior.
+- [ ] 04-03-PLAN.md — Add scheduler regression tests and run full post-migration verification gates (`db:generate`, `typecheck`, `test:run`).
 
 ### Phase 5: API Pagination
 **Goal**: The /api/membros, /api/horarios, and /api/planos endpoints accept page and limit parameters and return paginated responses, preventing unbounded payload growth as the studio grows
