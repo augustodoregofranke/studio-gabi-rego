@@ -81,3 +81,4 @@ utility/csv/
 
 # Local assistant artifacts
 .claude/
+.env*.local
