@@ -59,11 +59,13 @@ export async function runCobrancaWhatsappT1(): Promise<JobSummary> {
   const todayYmd = getYmdInTimeZone(new Date(), getAppTimezone())
   const targetYmd = addDaysYmd(todayYmd, 1)
   const targetDate = new Date(`${targetYmd}T12:00:00.000Z`)
+  const targetDateStart = new Date(`${targetYmd}T00:00:00.000Z`)
+  const targetDateEnd = new Date(`${targetYmd}T23:59:59.999Z`)
 
   const pagamentos = await prisma.pagamento.findMany({
     where: {
       status: 'PENDENTE',
-      dataVencimento: targetDate,
+      dataVencimento: { gte: targetDateStart, lte: targetDateEnd },
       membro: {
         is: {
           status: 'ATIVO',
