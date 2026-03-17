@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "next dev",
+    "dev:local": "./scripts/dev-local.sh",
+    "dev:deps": "docker compose up -d postgres",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
